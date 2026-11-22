@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: payment-service
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/emmeny_payment}
+
+server:
+  port: 8086
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  structured:
+    format:
+      console: ecs

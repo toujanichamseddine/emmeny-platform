@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: insurance-service
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/emmeny_insurance}
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  structured:
+    format:
+      console: ecs

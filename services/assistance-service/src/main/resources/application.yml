@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: assistance-service
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/emmeny_assistance}
+
+server:
+  port: 8085
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  structured:
+    format:
+      console: ecs
