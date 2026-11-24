@@ -18,6 +18,7 @@ public record InsuranceOffer(
         String description,
         List<Coverage> coverages,
         BigDecimal premiumAmount,
+        BigDecimal deductibleAmount,
         String currency,
         String marketCountry,
         LocalDate validFrom,

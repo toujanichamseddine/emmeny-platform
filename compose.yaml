@@ -17,6 +17,7 @@ services:
       dockerfile: services/identity-service/Dockerfile
     environment:
       MONGODB_URI: mongodb://mongo:27017/emmeny_identity
+      AUTH_COOKIE_SECURE: "false"
     ports:
       - "8081:8081"
     depends_on:
@@ -29,6 +30,7 @@ services:
       dockerfile: services/insurance-service/Dockerfile
     environment:
       MONGODB_URI: mongodb://mongo:27017/emmeny_insurance
+      SPRING_PROFILES_ACTIVE: demo
     ports:
       - "8082:8082"
     depends_on:

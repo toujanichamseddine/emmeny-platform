@@ -4,9 +4,14 @@ spring:
   data:
     mongodb:
       uri: ${MONGODB_URI:mongodb://localhost:27017/emmeny_identity}
+      auto-index-creation: true
 
 server:
   port: 8081
+
+app:
+  auth:
+    cookie-secure: ${AUTH_COOKIE_SECURE:true}
 
 management:
   endpoints:
